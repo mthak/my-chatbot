@@ -23,6 +23,16 @@ uhh_what = [
     "Both hold a special place in my heart"
   ]
 
+sendMessage = (msg,query) ->
+     data = JSON.stringify({
+     "message":"#{query}"
+     })
+     msg.http("http://localhost:5000/messages")
+     .header('Content-Type', 'application/json')
+     .post(data) (err, res, body) ->
+          response = JSON.parse body
+          msg.send response.digest
+
 module.exports = (robot) ->
   robot.respond /(which|who) is (better|worse)\?* (.*) or (.*?)\??$/i, (msg) ->
     choosen_response = msg.random [1..5]
@@ -45,4 +55,6 @@ module.exports = (robot) ->
 
   robot.respond /(.*)(kya|ku|kahe)(.*)/i, (msg) ->  
     msg.send "Stop harrasing me with all these kya ku questions :)"
-
+  
+  robot.respond /(.*)message (.*)/i, (msg) ->
+     sendMessage msg, msg.match[2]
