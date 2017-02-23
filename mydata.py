@@ -14,6 +14,8 @@ stationinfo = mydict['root']['station']
 
 destinationinfo = mydict['root']['station']['etd']
 
-for key,value in mydict.items():
- 
+for key,value in destinationinfo.items():
+    print key,value
+
+
 
