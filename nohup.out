@@ -44,3 +44,32 @@ Your hubot-scripts.json is empty, so you just need to remove it.
 Your hubot-scripts.json is empty, so you just need to remove it.
 [Tue Feb 21 2017 15:30:36 GMT-0800 (PST)] ERROR hubot-heroku-alive included, but missing HUBOT_HEROKU_KEEPALIVE_URL. `heroku config:set HUBOT_HEROKU_KEEPALIVE_URL=$(heroku apps:info -s  | grep web-url | cut -d= -f2)`
 [Tue Feb 21 2017 15:30:36 GMT-0800 (PST)] INFO hubot-redis-brain: Using default redis on localhost:6379
++ HUBOT_SLACK_TOKEN=xoxb-143428082737-h7ydENnaQzjRhIo3XsnJc2Jl
++ /root/my-chatbot/bin/hubot --adapter slack
+[Wed Feb 22 2017 00:49:06 GMT-0800 (PST)] INFO Logged in as cloudbot of cloudme
+[Wed Feb 22 2017 00:49:07 GMT-0800 (PST)] INFO Slack client now connected
+[Wed Feb 22 2017 00:49:07 GMT-0800 (PST)] WARNING Loading scripts from hubot-scripts.json is deprecated and will be removed in 3.0 (https://github.com/github/hubot-scripts/issues/1113) in favor of packages for each script.
+
+Your hubot-scripts.json is empty, so you just need to remove it.
+[Wed Feb 22 2017 00:49:07 GMT-0800 (PST)] ERROR hubot-heroku-alive included, but missing HUBOT_HEROKU_KEEPALIVE_URL. `heroku config:set HUBOT_HEROKU_KEEPALIVE_URL=$(heroku apps:info -s  | grep web-url | cut -d= -f2)`
+[Wed Feb 22 2017 00:49:07 GMT-0800 (PST)] INFO hubot-redis-brain: Using default redis on localhost:6379
+/root/abc.sh: line 2:  9404 Hangup                  HUBOT_SLACK_TOKEN=xoxb-143428082737-h7ydENnaQzjRhIo3XsnJc2Jl /root/my-chatbot/bin/hubot --adapter slack
++ HUBOT_SLACK_TOKEN=xoxb-143428082737-h7ydENnaQzjRhIo3XsnJc2Jl
++ /root/my-chatbot/bin/hubot --adapter slack
+[Wed Feb 22 2017 16:40:35 GMT-0800 (PST)] INFO Logged in as cloudbot of cloudme
+[Wed Feb 22 2017 16:40:35 GMT-0800 (PST)] INFO Slack client now connected
+[Wed Feb 22 2017 16:40:35 GMT-0800 (PST)] WARNING Loading scripts from hubot-scripts.json is deprecated and will be removed in 3.0 (https://github.com/github/hubot-scripts/issues/1113) in favor of packages for each script.
+
+Your hubot-scripts.json is empty, so you just need to remove it.
+[Wed Feb 22 2017 16:40:35 GMT-0800 (PST)] ERROR hubot-heroku-alive included, but missing HUBOT_HEROKU_KEEPALIVE_URL. `heroku config:set HUBOT_HEROKU_KEEPALIVE_URL=$(heroku apps:info -s  | grep web-url | cut -d= -f2)`
+[Wed Feb 22 2017 16:40:36 GMT-0800 (PST)] INFO hubot-redis-brain: Using default redis on localhost:6379
+/root/abc.sh: line 2: 18357 Hangup                  HUBOT_SLACK_TOKEN=xoxb-143428082737-h7ydENnaQzjRhIo3XsnJc2Jl /root/my-chatbot/bin/hubot --adapter slack
++ HUBOT_SLACK_TOKEN=xoxb-143428082737-h7ydENnaQzjRhIo3XsnJc2Jl
++ /root/my-chatbot/bin/hubot --adapter slack
+[Wed Feb 22 2017 18:55:03 GMT-0800 (PST)] INFO Logged in as cloudbot of cloudme
+[Wed Feb 22 2017 18:55:03 GMT-0800 (PST)] INFO Slack client now connected
+[Wed Feb 22 2017 18:55:03 GMT-0800 (PST)] WARNING Loading scripts from hubot-scripts.json is deprecated and will be removed in 3.0 (https://github.com/github/hubot-scripts/issues/1113) in favor of packages for each script.
+
+Your hubot-scripts.json is empty, so you just need to remove it.
+[Wed Feb 22 2017 18:55:03 GMT-0800 (PST)] ERROR hubot-heroku-alive included, but missing HUBOT_HEROKU_KEEPALIVE_URL. `heroku config:set HUBOT_HEROKU_KEEPALIVE_URL=$(heroku apps:info -s  | grep web-url | cut -d= -f2)`
+[Wed Feb 22 2017 18:55:04 GMT-0800 (PST)] INFO hubot-redis-brain: Using default redis on localhost:6379

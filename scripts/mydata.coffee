@@ -33,6 +33,13 @@ sendMessage = (msg,query) ->
           response = JSON.parse body
           msg.send response.digest
 
+recieveMessage = (msg,query) ->
+     msg.http("http://localhost:5000/messages/#{query}")
+     .header('Content-Type', 'application/json')
+     .get() (err, res, body) ->
+          response = JSON.parse body
+          msg.send "i got your message #{response.message}"
+
 module.exports = (robot) ->
   robot.respond /(which|who) is (better|worse)\?* (.*) or (.*?)\??$/i, (msg) ->
     choosen_response = msg.random [1..5]
@@ -58,3 +65,7 @@ module.exports = (robot) ->
   
   robot.respond /(.*)message (.*)/i, (msg) ->
      sendMessage msg, msg.match[2]
+  
+  robot.respond /(.*)hash (.*)/i, (msg) ->
+     recieveMessage msg, msg.match[2]
+  
