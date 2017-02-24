@@ -30,9 +30,28 @@ sendMessage = (msg,query) ->
      msg.http("http://localhost:5000/messages")
      .header('Content-Type', 'application/json')
      .post(data) (err, res, body) ->
+          if err
+             res.send "Encountered an error :( #{err}"
+             return
           response = JSON.parse body
           msg.send response.digest
 
+sendBartData = (msg,src,dest) ->
+     data = JSON.stringify({
+     "source":"#{src}",
+     "dest": "#{dest}"
+     })
+     msg.http("http://localhost:8090/findroute")
+     .header('Content-Type', 'application/json')
+     .post(data) (err, res, body) ->
+          if err
+             res.send "Encountered an error :( #{err}"
+             return
+          response = JSON.parse body
+          msg.send response.time
+
+recieveMessage = (msg,query) ->
+     msg.http("http://localhost:5000/messages/#{query}")
 recieveMessage = (msg,query) ->
      msg.http("http://localhost:5000/messages/#{query}")
      .header('Content-Type', 'application/json')
@@ -68,4 +87,7 @@ module.exports = (robot) ->
   
   robot.respond /(.*)hash (.*)/i, (msg) ->
      recieveMessage msg, msg.match[2]
+  
+  robot.respond /(.*)bart from(.*)to(.*)/i, (msg) ->
+     sendBartData msg, msg.match[2], msg.match[3]
   
