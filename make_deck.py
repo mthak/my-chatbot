@@ -169,6 +169,15 @@ slides_list = [
         "• Execution across gamification, fintech partnerships, and growth.\n"
         "• Building a multi-disciplinary founding team with product and growth depth."
     ),
+    (
+        "Slide 11: Traction and 12-Month Projection",
+        "Current Stage: Early Beta Traction\n"
+        "• Product status: Beta build completed.\n"
+        "• Current customer base: 50 early customers.\n\n"
+        "12-Month Projection:\n"
+        "• Target onboarding: 1 lakh (100,000) students.\n"
+        "• Focus: campus-led acquisition, gamified retention loops, and referral growth."
+    ),
 ]
 
 for slide_title, slide_content in slides_list:
