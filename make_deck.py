@@ -155,6 +155,15 @@ slides_list = [
         "• 30% Gamification Pipeline: simulation leagues, adaptive quizzes, level systems.\n"
         "• 30% User Acquisition: targeted Tier-1 and Tier-2 campus growth campaigns."
     ),
+    (
+        "Slide 10: Founding Team",
+        "Founder Spotlight\n\n"
+        "Manoj Thakkar - CEO & Founder\n"
+        "LinkedIn: https://www.linkedin.com/in/manoj-thakkar-6583b46/\n\n"
+        "Leadership Focus:\n"
+        "• Product vision for India's youth-first wealth platform.\n"
+        "• Execution across gamification, fintech partnerships, and growth."
+    ),
 ]
 
 for slide_title, slide_content in slides_list:
