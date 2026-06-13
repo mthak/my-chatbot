@@ -1,23 +1,65 @@
 import collections.abc  # noqa: F401
 from pptx import Presentation
 from pptx.dml.color import RGBColor
+from pptx.enum.shapes import MSO_AUTO_SHAPE_TYPE
 from pptx.util import Inches, Pt
+
+
+def apply_risewise_theme(slide, prs):
+    slide.background.fill.solid()
+    slide.background.fill.fore_color.rgb = DARK_BG
+
+    top_band = slide.shapes.add_shape(
+        MSO_AUTO_SHAPE_TYPE.RECTANGLE, Inches(0), Inches(0), prs.slide_width, Inches(1.15)
+    )
+    top_band.fill.solid()
+    top_band.fill.fore_color.rgb = BAND_BG
+    top_band.line.fill.background()
+
+    accent_strip = slide.shapes.add_shape(
+        MSO_AUTO_SHAPE_TYPE.RECTANGLE, Inches(0), Inches(0), prs.slide_width, Inches(0.08)
+    )
+    accent_strip.fill.solid()
+    accent_strip.fill.fore_color.rgb = NEON_GREEN
+    accent_strip.line.fill.background()
+
+    glow_chip = slide.shapes.add_shape(
+        MSO_AUTO_SHAPE_TYPE.ROUNDED_RECTANGLE,
+        Inches(10.7),
+        Inches(0.22),
+        Inches(1.85),
+        Inches(0.55),
+    )
+    glow_chip.fill.solid()
+    glow_chip.fill.fore_color.rgb = ACCENT_BLUE
+    glow_chip.line.fill.background()
+
+    content_card = slide.shapes.add_shape(
+        MSO_AUTO_SHAPE_TYPE.ROUNDED_RECTANGLE,
+        Inches(0.55),
+        Inches(1.45),
+        Inches(12.2),
+        Inches(5.75),
+    )
+    content_card.fill.solid()
+    content_card.fill.fore_color.rgb = CARD_BG
+    content_card.line.color.rgb = EDGE_GREEN
+    content_card.line.width = Pt(1)
 
 
 def add_styled_slide(prs, title, content):
     slide = prs.slides.add_slide(prs.slide_layouts[6])
-    slide.background.fill.solid()
-    slide.background.fill.fore_color.rgb = DARK_BG
+    apply_risewise_theme(slide, prs)
 
-    title_box = slide.shapes.add_textbox(Inches(0.75), Inches(0.55), Inches(11.8), Inches(1.1))
+    title_box = slide.shapes.add_textbox(Inches(0.78), Inches(0.27), Inches(10.6), Inches(0.85))
     title_p = title_box.text_frame.paragraphs[0]
     title_p.text = title
-    title_p.font.name = "Arial"
-    title_p.font.size = Pt(34)
+    title_p.font.name = "Calibri"
+    title_p.font.size = Pt(30)
     title_p.font.bold = True
     title_p.font.color.rgb = WHITE
 
-    body_box = slide.shapes.add_textbox(Inches(0.75), Inches(1.8), Inches(11.8), Inches(5.35))
+    body_box = slide.shapes.add_textbox(Inches(0.88), Inches(1.78), Inches(11.55), Inches(5.12))
     body_tf = body_box.text_frame
     body_tf.word_wrap = True
     body_tf.margin_left = Inches(0.05)
@@ -26,7 +68,7 @@ def add_styled_slide(prs, title, content):
     for idx, line in enumerate(content.split("\n")):
         p = body_tf.paragraphs[0] if idx == 0 else body_tf.add_paragraph()
         p.text = line
-        p.font.name = "Arial"
+        p.font.name = "Calibri"
 
         emphasized = any(
             token in line
@@ -42,25 +84,32 @@ def add_styled_slide(prs, title, content):
                 "RiseWise",
                 "Gold Tier",
                 "Seeking",
+                "LinkedIn",
+                "Current Stage",
+                "12-Month Projection",
             )
         )
         if emphasized:
-            p.font.size = Pt(23)
+            p.font.size = Pt(22)
             p.font.bold = True
             p.font.color.rgb = NEON_GREEN
         else:
-            p.font.size = Pt(17)
-            p.font.color.rgb = LIGHT_GREY
-        p.space_after = Pt(7)
+            p.font.size = Pt(16)
+            p.font.color.rgb = MUTED_TEXT
+        p.space_after = Pt(6)
 
 
 prs = Presentation()
 prs.slide_width, prs.slide_height = Inches(13.333), Inches(7.5)
 
 DARK_BG = RGBColor(13, 17, 23)
+CARD_BG = RGBColor(22, 27, 34)
+BAND_BG = RGBColor(18, 24, 33)
+ACCENT_BLUE = RGBColor(56, 139, 253)
 WHITE = RGBColor(255, 255, 255)
 NEON_GREEN = RGBColor(0, 230, 118)
-LIGHT_GREY = RGBColor(180, 185, 195)
+EDGE_GREEN = RGBColor(48, 140, 100)
+MUTED_TEXT = RGBColor(201, 209, 217)
 
 slides_list = [
     (
