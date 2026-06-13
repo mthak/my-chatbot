@@ -157,12 +157,17 @@ slides_list = [
     ),
     (
         "Slide 10: Founding Team",
-        "Founder Spotlight\n\n"
+        "Founding Team Spotlight\n\n"
         "Manoj Thakkar - CEO & Founder\n"
         "LinkedIn: https://www.linkedin.com/in/manoj-thakkar-6583b46/\n\n"
+        "Nikunj Dewan - Co-Founder\n"
+        "LinkedIn: https://www.linkedin.com/in/nikunjdewan/\n\n"
+        "Janya Goel - Co-Founder\n"
+        "LinkedIn: https://www.linkedin.com/in/janyagoel/\n\n"
         "Leadership Focus:\n"
         "• Product vision for India's youth-first wealth platform.\n"
-        "• Execution across gamification, fintech partnerships, and growth."
+        "• Execution across gamification, fintech partnerships, and growth.\n"
+        "• Building a multi-disciplinary founding team with product and growth depth."
     ),
 ]
 
